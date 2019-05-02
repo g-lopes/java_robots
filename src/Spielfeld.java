@@ -20,18 +20,13 @@ public class Spielfeld {
 
         array[0] = new Punkt(0,0);
 
-        for(int i = 0; i < 2*size; i++) {
-            index = (int) Math.ceil(i/2) + 1;
-            if(i % 2 == 0) {
-                System.out.println("Geben sie die Koordinate X für p" + index + " ein.");
-                x = sc.nextInt();
-
-            } else {
-                System.out.println("Geben sie die Koordinate Y für p" + index + " ein.");
-                y = sc.nextInt();
-                Punkt p = new Punkt(x,y);
-                array[index] = p;
-            }
+        for(int i = 1; i < size+1; i++) {
+            System.out.println("Geben sie die Koordinate X für p" + i + " ein.");
+            x = sc.nextInt();
+            System.out.println("Geben sie die Koordinate Y für p" + i + " ein.");
+            y = sc.nextInt();
+            Punkt p = new Punkt(x,y);
+            array[i] = p;
         }
 
         POI_sortieren(array);
