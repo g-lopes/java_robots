@@ -43,11 +43,9 @@ public class Spielfeld {
         Punkt naechsterPunkt = null;
 
         for(int i = 0; i < punkte.length - 1; i++) {
-                minAbstand = 3000;
-            for(int j = 1; j < punkte.length; j++) {
-                abstand = punkte[i].gibAbstand(punkte[j]);
-                if(abstand < minAbstand) {
-                    minAbstand = abstand;
+            abstand = punkte[i].gibAbstand(punkte[i+1]);
+            for(int j = i+1; j < punkte.length; j++) {
+                if(abstand > punkte[i].gibAbstand(punkte[j])) {
                     naechsterPunkt = punkte[j];
                     punkte[j] = punkte[i+1];
                     punkte[i+1] = naechsterPunkt;
@@ -56,6 +54,7 @@ public class Spielfeld {
 
         }
 
+        // Wenn du willst, kannst du die folgenden Zeile loeschen.
         for(int i = 0; i < punkte.length; i++) {
             System.out.println("(" + punkte[i].x + "," + punkte[i].y + ")");
         }
