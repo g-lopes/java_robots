@@ -33,11 +33,18 @@ public class Spielfeld {
                 array[index] = p;
             }
         }
+
+        POI_sortieren(array);
+
+        // Wenn du willst, kannst du die folgenden Zeile loeschen.
+        for(int i = 0; i < array.length; i++) {
+            System.out.println("(" + array[i].x + "," + array[i].y + ")");
+        }
+
         return array;
     }
 
-    void POI_sortieren() {
-        Punkt[] punkte = punkte_eingeben();
+    void POI_sortieren(Punkt[] punkte) {
         double minAbstand = 30000;
         double abstand = -1;
         Punkt naechsterPunkt = null;
@@ -51,14 +58,7 @@ public class Spielfeld {
                     punkte[i+1] = naechsterPunkt;
                 }
             }
-
         }
-
-        // Wenn du willst, kannst du die folgenden Zeile loeschen.
-        for(int i = 0; i < punkte.length; i++) {
-            System.out.println("(" + punkte[i].x + "," + punkte[i].y + ")");
-        }
-
     }
 
 }
