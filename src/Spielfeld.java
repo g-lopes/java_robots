@@ -16,7 +16,6 @@ public class Spielfeld {
         Punkt[] array = new Punkt[size + 1];
         int x = -1;
         int y = -1;
-        int index = -1;
 
         array[0] = new Punkt(0,0);
 
@@ -40,7 +39,6 @@ public class Spielfeld {
     }
 
     void POI_sortieren(Punkt[] punkte) {
-        double minAbstand = 30000;
         double abstand = -1;
         Punkt naechsterPunkt = null;
 
